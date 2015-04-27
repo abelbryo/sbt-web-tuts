@@ -1,0 +1,40 @@
+@()
+
+<div ng-controller="HomeCtrl">
+<h1>Home</h1>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="title">Send your message</h4>
+        </div>
+        <div class="panel-body">
+
+            <form  novalidate role="form" ng-submit="chatForm.$valid && submitForm()" class="chat-form" name="chatForm">
+
+
+                <div class="form-group">
+                    <label for="uEmail">Your email</label>
+                    <input class="form-control" type="email" id="uEmail" name="uEmail"  ng-model="user.email" required/>
+                </div>
+
+                <div ng-show="chatForm.uEmail.$dirty && chatForm.uEmail.$invalid">
+                    <span ng-show="chatForm.uEmail.$error.required">Tell us your email.</span>
+                    <span ng-show="chatForm.uEmail.$error.email">This is not a valid email.</span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="chat-message">Your text</label>
+                    <textarea class="form-control" id="chat-message" name="message" cols="30" rows="3" ng-model="user.message"></textarea>
+                </div>
+
+                <button class="btn btn-success" type="submit">Submit</button>
+
+                <hr />
+
+                <pre>data = {{  user | json }}</pre>
+
+            </form>
+        </div>
+    </div>
+</div>

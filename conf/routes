@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /comet                      controllers.Application.comet
+POST    /message                    controllers.Application.message
+
+GET     /templates/home             controllers.TemplateRouteController.home
+GET     /templates/about            controllers.TemplateRouteController.about
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+

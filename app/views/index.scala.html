@@ -1,0 +1,25 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+    <div class="container" ng-app="testCometApp">
+
+        <div ng-controller="MainCtrl">
+
+            <ul class="nav nav-pills">
+                <li class="active"><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="about">About</a></li>
+            </ul>
+
+            <div ui-view></div>
+
+            <h2>{{cometString}}</h2>
+
+            <iframe src="/comet" id="comet" frameborder="0"></iframe>
+
+        </div>
+
+
+    </div>
+
+}
